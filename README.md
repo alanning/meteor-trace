@@ -1,5 +1,5 @@
 # meteor-trace
-Log client-side Meteor collection and template events
+Log client-side Meteor collection and template events to the browser console.
 
 ### Install package
 
