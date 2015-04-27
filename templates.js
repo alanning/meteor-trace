@@ -59,6 +59,8 @@ Trace.registerTrace("templates", {
 //
 
 function traceLifeCycle (template, name) {
+  "use strict"
+
   var _callbacks = template._callbacks
 
   if (!_callbacks) {
@@ -116,13 +118,17 @@ function traceOldRendered(template, name) {
 //
 
 function traceHelpers (template, templateName) {
-  var __helpers = template.__helpers
+  "use strict"
+  
+  var __helpers = template.__helpers,
+      makeWrapper,
+      helperName
 
   if (!__helpers) {
     return
   }
 
-  for (var helperName in __helpers) {
+  for (helperName in __helpers) {
     if (helperName == 'get' ||
         helperName == 'set' ||
         helperName == 'has') {
@@ -132,7 +138,7 @@ function traceHelpers (template, templateName) {
     console.log("[trace] tracing Template['" + templateName + "'] helper '" +
                 helperName.trim() + "'")
 
-    function makeWrapper (hName) {
+    makeWrapper = function (hName) {
       return function (func) {
         "use strict"
 
