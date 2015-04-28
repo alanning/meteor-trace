@@ -1,6 +1,6 @@
 Package.describe({
   summary: "Log client-side Meteor events",
-  version: "0.0.1",
+  version: "0.0.2",
   git: "https://github.com/alanning/meteor-trace.git",
   name: "alanning:trace"
 });
