@@ -142,7 +142,7 @@ function traceHelpers (template, templateName) {
       return function (func) {
         "use strict"
 
-        var args = Array.prototype.splice.call(arguments, 0, 1)
+        var args = Array.prototype.splice.call(arguments, 1)
 
         console.log("[trace] Template['" + templateName + 
                     "'] helper '" + hName + "' called")
